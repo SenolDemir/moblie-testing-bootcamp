@@ -29,7 +29,11 @@ public class BuiltinAppTest {
     public void setup() throws MalformedURLException {
 
 
-        String path = "/Users/nuvanda/SDET/sdet library/Mobile Testing/test data/Calculator_8.6.1.apk";
+        /*
+            to get package name of app from emulator package viewer apk installed to emulator manually
+            by using it the details of clock app captured and used in capability setting
+            it is in test data folder name is: com-csdroid-pkg.apk
+         */
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("appium:automationName", "UiAutomator2");
