@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,12 +14,10 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
 
-public class AndroidEmulatorTest {
+public class ExternalAppTest {
 
     AppiumDriver driver = null;
-
 
     @BeforeTest
     public void setup() throws MalformedURLException {
@@ -35,23 +34,40 @@ public class AndroidEmulatorTest {
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
 
-
     }
-
-    @Test
-    public void androidEmulatorExternalApp(){
-
-        driver.findElement(By.id("com.google.android.calculator:id/digit_9")).click();
-
-
-    }
-
 
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
 
-        if(driver!=null){
+        if (driver != null) {
             driver.quit();
         }
     }
+
+    @Test
+    public void test2() throws InterruptedException {
+
+//        WebElement plus = driver
+//                .findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"plus\"]"));
+
+        WebElement multiply = driver
+                .findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"multiply\"]"));
+        WebElement equals = driver.findElement(AppiumBy.accessibilityId("equals"));
+
+        getDigit(9).click();
+        Thread.sleep(2000);
+        multiply.click();
+        getDigit(6).click();
+        equals.click();
+
+        String result = driver.findElement(By.id("com.google.android.calculator:id/result_final")).getText();
+        Assert.assertEquals(Integer.valueOf(result), 54);
+    }
+
+    public WebElement getDigit(int num) {
+        return driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"" + num + "\"]"));
+    }
+
+
+
 }
