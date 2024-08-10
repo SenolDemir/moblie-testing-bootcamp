@@ -1,8 +1,7 @@
-package com.domain.tests;
+package com.domain.tests.android;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -34,16 +33,26 @@ public class MobileChromeTest {
         // it coul not executed with chrome driver
         // app package name has been used
 
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//        caps.setCapability("appium:automationName", "UiAutomator2");
+//        caps.setCapability("platformName", "Android");
+//        caps.setCapability("appium:platformVersion", "15.0");
+//        caps.setCapability("appium:deviceName", "emulator-5554");
+//        caps.setCapability("appium:noReset", true);
+//        caps.setCapability("appium:appPackage", "com.android.chrome");
+//        caps.setCapability("appium:appActivity", "com.google.android.apps.chrome.Main");
+//
+//        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
+
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("appium:automationName", "UiAutomator2");
         caps.setCapability("platformName", "Android");
         caps.setCapability("appium:platformVersion", "15.0");
         caps.setCapability("appium:deviceName", "emulator-5554");
         caps.setCapability("appium:noReset", true);
-        caps.setCapability("appium:appPackage", "com.android.chrome");
-        caps.setCapability("appium:appActivity", "com.google.android.apps.chrome.Main");
+        caps.setCapability(CapabilityType.BROWSER_NAME, "chrome");
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
+        driver = new AppiumDriver(new URL("http://127.0.0.1:4723"), caps);
 
 
 

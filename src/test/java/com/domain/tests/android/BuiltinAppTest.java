@@ -1,4 +1,4 @@
-package com.domain.tests;
+package com.domain.tests.android;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
