@@ -4,12 +4,12 @@ Installation
 
 ## Appium Plugins
 
-appium-wait-plugin  
+### appium wait plugin  
 This is an Appium plugin designed to wait for element to be present.
 ``` 
 appium plugin install --source=npm appium-wait-plugin
 ```
-appium-device-farm  
+### appium device farm  
 This is an Appium plugin designed to manage and create driver session on connected android, iOS real devices, emulators and Simulators.  
 ```
 appium plugin install --source=npm appium-device-farm
