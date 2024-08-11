@@ -29,21 +29,6 @@ public class MobileChromeTest {
 //        driver = new AppiumDriver(new URL("http://127.0.0.1:4723"), options);
 
 
-
-        // it coul not executed with chrome driver
-        // app package name has been used
-
-//        DesiredCapabilities caps = new DesiredCapabilities();
-//        caps.setCapability("appium:automationName", "UiAutomator2");
-//        caps.setCapability("platformName", "Android");
-//        caps.setCapability("appium:platformVersion", "15.0");
-//        caps.setCapability("appium:deviceName", "emulator-5554");
-//        caps.setCapability("appium:noReset", true);
-//        caps.setCapability("appium:appPackage", "com.android.chrome");
-//        caps.setCapability("appium:appActivity", "com.google.android.apps.chrome.Main");
-//
-//        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
-
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("appium:automationName", "UiAutomator2");
         caps.setCapability("platformName", "Android");
@@ -51,8 +36,11 @@ public class MobileChromeTest {
         caps.setCapability("appium:deviceName", "emulator-5554");
         caps.setCapability("appium:noReset", true);
         caps.setCapability(CapabilityType.BROWSER_NAME, "chrome");
+        caps.setCapability(CapabilityType.BROWSER_VERSION, "127.0.6533.100");
 
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723"), caps);
+
+        // calistirilamadi
 
 
 
