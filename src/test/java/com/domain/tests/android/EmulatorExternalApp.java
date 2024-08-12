@@ -3,6 +3,7 @@ package com.domain.tests.android;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -56,12 +57,15 @@ public class EmulatorExternalApp {
 
         getDigit(9).click();
         Thread.sleep(2000);
+
         multiply.click();
         getDigit(6).click();
         equals.click();
 
         String result = driver.findElement(By.id("com.google.android.calculator:id/result_final")).getText();
         Assert.assertEquals(Integer.valueOf(result), 54);
+
+
     }
 
     public WebElement getDigit(int num) {

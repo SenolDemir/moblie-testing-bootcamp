@@ -2,27 +2,27 @@
 
 # Requirements  
 Java JDK 11+ installation  
+IntelliJ IDEA Installation  
 Homebrew installation  
-NodeJS installation  
-npm installation  
-IntelliJ IDEA CE Installation  
-Appium Server
-Appium Inspector  
-Android Studio  
-Xcode  
+NodeJS installation (required to up and run appium server)  
+npm installation
+Android Studio (to use android emulator devices)  
+Xcode (to use ios simulator devices)
 
 # Appium Setup and Installations
+Appium Server  
+Appium Inspector
 
 ## Appium Drivers
 for iOS devices - XCUITest  
-```ddt
-appium driver install xcuitest
-```
 for Android devices - UIAutomator2  
 ```ddt
+appium driver install xcuitest
 appium driver install uiautomator2
 ```
-for mobile safari
+### for mobile chrome
+
+### for mobile safari  
 appium safari driver should be installed:
 ```bash
 appium driver install safari
@@ -51,6 +51,9 @@ appium plugin install --source=npm appium-device-farm
 ```  
 for setup and usage
 https://devicefarm.org/setup/
+
+# Features
+to start appium server by automation (to prevent handle it manually) a BeforeTest method generated. Autamation starts and stop appium server before and efter test
 
 ## Android
 to get package name of app from emulator package viewer apk installed to emulator manually
