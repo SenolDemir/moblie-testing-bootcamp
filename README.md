@@ -1,6 +1,6 @@
 # Mobile Testing Bootcamp
 
-# Requirements
+# Requirements  
 Java JDK 11+ installation  
 Homebrew installation  
 NodeJS installation  
@@ -10,6 +10,29 @@ Appium Server
 Appium Inspector  
 Android Studio  
 Xcode  
+
+# Appium Setup and Installations
+
+## Appium Drivers
+for iOS devices - XCUITest  
+```ddt
+appium driver install xcuitest
+```
+for Android devices - UIAutomator2  
+```ddt
+appium driver install uiautomator2
+```
+for mobile safari
+appium safari driver should be installed:
+```bash
+appium driver install safari
+```
+note:   
+It is mandatory to run the ```safaridriver --enable ```
+command from the macOS terminal and provide your administrator password before any automated session will be executed.  
+and  
+you have to enable your Safari Developer options and activate “Automatically Show Web Inspector for JSContexts” for your iOS simulator.
+
 
 ## Appium Plugins
 
@@ -39,14 +62,6 @@ it is in test data folder name is: com-csdroid-pkg.apk
 some additional appium packages added which defining by appium-doctor
 app test with external and builtin apps executed.
 
-Mobile Safari Test  
-appium safari driver should be installed:  
-```bash
-appium driver install safari
-```
-note:   
-It is mandatory to run the ```safaridriver --enable ```
-command from the macOS terminal and provide your administrator password before any automated session will be executed.
 
 ## Cloud Platforms  
 SauceLab and BrowserStack were tried

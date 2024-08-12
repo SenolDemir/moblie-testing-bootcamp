@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class IOSBuiltinAppTest {
+public class SimulatorInternalApp {
 
 
     AppiumDriver driver = null;

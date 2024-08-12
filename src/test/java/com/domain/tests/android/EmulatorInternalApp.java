@@ -20,7 +20,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Collections;
 
-public class BuiltinAppTest {
+public class EmulatorInternalApp {
 
 
     AppiumDriver driver = null;

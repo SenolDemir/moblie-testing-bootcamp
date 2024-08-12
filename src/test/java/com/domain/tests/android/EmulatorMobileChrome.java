@@ -1,7 +1,6 @@
 package com.domain.tests.android;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -12,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class MobileChromeTest {
+public class EmulatorMobileChrome {
 
 
     AppiumDriver driver = null;
