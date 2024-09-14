@@ -3,14 +3,11 @@ package com.domain.tests.android;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 
 import java.net.MalformedURLException;
@@ -20,8 +17,8 @@ public class EmulatorExternalApp {
 
     AppiumDriver driver = null;
 
-    @BeforeTest
-    public void setup() throws MalformedURLException {
+    @BeforeClass
+    public void startSession() throws MalformedURLException {
 
 
         String path = "/Users/nuvanda/SDET/sdet library/Mobile Testing/test data/Calculator_8.6.1.apk";
@@ -37,19 +34,11 @@ public class EmulatorExternalApp {
 
     }
 
-    @AfterTest
-    public void tearDown() {
 
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 
     @Test
     public void test2() throws InterruptedException {
 
-//        WebElement plus = driver
-//                .findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"plus\"]"));
 
         WebElement multiply = driver
                 .findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"multiply\"]"));
@@ -66,6 +55,14 @@ public class EmulatorExternalApp {
         Assert.assertEquals(Integer.valueOf(result), 54);
 
 
+    }
+
+    @AfterClass
+    public void tearDown() {
+
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     public WebElement getDigit(int num) {

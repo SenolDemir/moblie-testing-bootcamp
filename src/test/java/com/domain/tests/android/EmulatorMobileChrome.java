@@ -39,7 +39,7 @@ public class EmulatorMobileChrome {
 
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723"), caps);
 
-        // calistirilamadi
+
 
 
 
